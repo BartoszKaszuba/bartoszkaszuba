@@ -1,41 +1,40 @@
 "use client"
 
-import { Target, Globe, Handshake, Zap } from "lucide-react"
+import { Code, Cpu, Layers, Users } from "lucide-react"
 
-const skills = [
-  "Community Building",
-  "Developer Advocacy",
-  "Technical Writing",
-  "Content Creation",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "SASS",
-  "Git",
-  "AI Tools",
+const skills = {
+  frontend: ["React", "TypeScript", "JavaScript", "HTML/CSS"],
+  backend: ["Laravel", "PHP", "REST APIs"],
+  hardware: ["ESP32", "Microcontrollers"],
+  methods: ["Agile / Scrum", "UX Research", "Git", "Beta Testing"],
+}
+
+const languages = [
+  { name: "English", level: "Fluent" },
+  { name: "Polish", level: "Fluent" },
+  { name: "Dutch", level: "Fluent" },
 ]
 
 const features = [
   {
-    icon: Target,
-    title: "Developer First",
-    description: "I simplify complex developer tools with hands-on demos and practical content that developers can actually use.",
+    icon: Code,
+    title: "Full Stack Development",
+    description: "Building complete web applications from frontend interfaces to backend APIs using modern technologies.",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
-    description: "400K+ developers across LinkedIn, Instagram, YouTube, and more trust my content for learning and growth.",
+    icon: Cpu,
+    title: "Hardware & IoT",
+    description: "Experience with ESP32 microcontrollers and building hardware architecture for real-world installations.",
   },
   {
-    icon: Handshake,
-    title: "Brand Collaborator",
-    description: "Worked with leading tech companies to create developer-facing content and campaigns.",
+    icon: Layers,
+    title: "UX Research",
+    description: "Conducting user research and beta testing to ensure applications solve real user problems effectively.",
   },
   {
-    icon: Zap,
-    title: "Builder Mindset",
-    description: "I don&apos;t just talk about tech, I build with it. From open-source projects to client websites, I ship real code.",
+    icon: Users,
+    title: "Agile Delivery",
+    description: "Working in agile teams using Scrum methodology to deliver functional software iteratively.",
   },
 ]
 
@@ -55,7 +54,7 @@ export function About() {
             About Me
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Developer Advocate who builds, teaches, and grows communities around the tools developers love.
+            ICT student at Fontys University with hands-on project experience, building applications that solve real problems.
           </p>
         </div>
 
@@ -63,28 +62,50 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
           <div className="space-y-6">
             <p className="text-foreground text-lg leading-relaxed">
-              {"I'm a Developer Advocate & Frontend Developer passionate about making technology accessible. I create technical content, build real-world demos, and help developers navigate complex tools with confidence."}
+              {"I'm a Full Stack Developer and ICT student at Fontys University of Applied Sciences in Eindhoven. I build applications that solve real user problems — from parking management systems to health companion apps."}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              {"I've collaborated with leading tech brands, creating content and demos that educate and engage developer communities worldwide. My work has been featured on some of the world's biggest tech sites."}
+              {"My experience spans from working on start-up products to creating hardware installations for light festivals. I'm passionate, curious, and ready to contribute from day one."}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              {"I'm passionate about dev education, community building, and bridging the gap between products and the developers who use them."}
+              {"I thrive in agile environments and enjoy the full development cycle — from conducting UX research to shipping production-ready code."}
             </p>
+
+            {/* Languages */}
+            <div className="pt-4">
+              <h3 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">Languages</h3>
+              <div className="flex flex-wrap gap-3">
+                {languages.map((lang, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20"
+                  >
+                    {lang.name} — {lang.level}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Skills */}
-          <div>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium border border-border hover:border-primary/50 transition-colors"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+          <div className="space-y-6">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category}>
+                <h3 className="text-sm font-medium text-foreground uppercase tracking-wider mb-3 capitalize">
+                  {category === "methods" ? "Methods & Tools" : category === "hardware" ? "Hardware & IoT" : category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillList.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium border border-border hover:border-primary/50 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

@@ -13,8 +13,8 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: 'Your Name | Developer Advocate & Tech Evangelist',
-  description: 'Developer Advocate & Tech Evangelist with a global developer audience. I create technical content, simplify complex tools, and help developers grow.',
+  title: 'Bartosz Kaszuba | Full Stack Developer',
+  description: 'Full Stack Developer & ICT student at Fontys University. Building web applications with React, TypeScript, Laravel, and modern technologies.',
   generator: 'v0.app',
   icons: {
     icon: [

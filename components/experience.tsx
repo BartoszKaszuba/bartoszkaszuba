@@ -1,51 +1,52 @@
 "use client"
 
-const experiences = [
+const workExperience = [
   {
-    company: "Company A",
-    type: "Contract · 3 Months",
-    role: "Developer Advocate",
-    description: "Built real apps showcasing product use cases. Demonstrated features through practical demos and helped developers understand key capabilities through engaging content.",
-    tags: ["Developer Education", "Technical Demos", "Content Creation"],
+    date: "2024",
+    title: "Logistics Intern",
+    company: "Cornelissen",
+    description: "Applied structured process thinking to supply-chain operations and transport coordination. Built professional communication skills through client-facing administration in a logistics environment.",
+    tags: ["Logistics", "Process Optimization", "Client Communication"],
   },
   {
-    company: "Company B",
-    type: "Contract · 3 Months",
-    role: "Developer Advocate",
-    description: "Showcased product capabilities through real project demos. Created short-form content highlighting developer workflows and best practices.",
-    tags: ["Content Creation", "Web Development", "Technical Writing"],
+    date: "2022–2023",
+    title: "Logistics Intern",
+    company: "Van Helderen",
+    description: "Developed a process-oriented work ethic through warehouse operations and transport coordination. Gained hands-on experience in client communication and operational reliability.",
+    tags: ["Warehouse Operations", "Transport", "Reliability"],
   },
   {
-    company: "Company C",
-    type: "Contract",
-    role: "Developer Advocate",
-    description: "Created developer-focused content showcasing productivity and project management capabilities. Demonstrated practical use cases and workflows.",
-    tags: ["Productivity", "Content Creation", "Developer Education"],
+    date: "2024–2026",
+    title: "Freelance",
+    company: "Hospitality",
+    description: "Bar and kitchen support across various venues. Developed adaptability and customer service skills in fast-paced environments.",
+    tags: ["Customer Service", "Adaptability", "Teamwork"],
+  },
+]
+
+const honorableMentions = [
+  {
+    date: "Ongoing",
+    title: "Team Collaboration",
+    description: "Active participation in team projects at Fontys, developing leadership and interpersonal skills through agile workflows.",
+    tags: ["Leadership", "Teamwork", "Communication"],
   },
   {
-    company: "Company D",
-    type: "Contract",
-    role: "Developer Advocate",
-    description: "Partnered to create content demonstrating AI-powered development platform. Built real projects and tutorials showing developers how to ship apps faster.",
-    tags: ["AI Tools", "App Development", "Content Creation"],
-  },
-  {
-    company: "Freelance",
-    type: "Self-Employed · 2023 – Present",
-    role: "Web Developer (Part Time)",
-    description: "Building frontend of websites and web apps using modern technologies. Working directly with clients to design and develop user interfaces.",
-    tags: ["React", "JavaScript", "CSS/SASS", "Client Work"],
+    date: "2024–Present",
+    title: "Multilingual Communication",
+    description: "Fluent in English, Polish, and Dutch — enabling effective collaboration in international and multicultural environments.",
+    tags: ["Languages", "Cross-cultural", "Professional"],
   },
 ]
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="experience" className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
-            {"Where I've Worked"}
+            Professional Background
           </p>
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6"
@@ -54,44 +55,100 @@ export function Experience() {
             Experience
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Partnered with top tech companies to create developer-focused content and drive product adoption.
+            Building professional skills through diverse work experiences and team collaboration.
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="max-w-3xl mx-auto space-y-6">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="p-6 lg:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Work Experience */}
+          <div>
+            <h3 
+              className="text-xl font-semibold text-foreground mb-8 flex items-center gap-3"
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-                <div>
-                  <h3 
-                    className="text-foreground font-semibold text-lg"
-                    style={{ fontFamily: 'var(--font-heading)' }}
-                  >
-                    {exp.company}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{exp.type}</p>
+              <span className="w-8 h-0.5 bg-primary" />
+              Work Experience
+            </h3>
+            <div className="space-y-6">
+              {workExperience.map((exp, index) => (
+                <div
+                  key={index}
+                  className="p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                    <div>
+                      <h4 
+                        className="text-foreground font-semibold"
+                        style={{ fontFamily: 'var(--font-heading)' }}
+                      >
+                        {exp.title}
+                      </h4>
+                      <p className="text-primary text-sm">{exp.company}</p>
+                    </div>
+                    <span className="text-muted-foreground text-sm whitespace-nowrap">{exp.date}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    {exp.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <span className="text-primary font-medium text-sm">{exp.role}</span>
-              </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {exp.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {exp.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Honorable Mentions */}
+          <div>
+            <h3 
+              className="text-xl font-semibold text-foreground mb-8 flex items-center gap-3"
+              style={{ fontFamily: 'var(--font-heading)' }}
+            >
+              <span className="w-8 h-0.5 bg-accent" />
+              Honorable Mentions
+            </h3>
+            <p className="text-muted-foreground text-sm mb-6">
+              Skills and experiences that build professional and interpersonal capabilities beyond IT.
+            </p>
+            <div className="space-y-6">
+              {honorableMentions.map((mention, index) => (
+                <div
+                  key={index}
+                  className="p-6 bg-card border border-border rounded-xl hover:border-accent/50 transition-all duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                    <h4 
+                      className="text-foreground font-semibold"
+                      style={{ fontFamily: 'var(--font-heading)' }}
+                    >
+                      {mention.title}
+                    </h4>
+                    <span className="text-muted-foreground text-sm whitespace-nowrap">{mention.date}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    {mention.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {mention.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

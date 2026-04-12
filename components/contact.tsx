@@ -1,17 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { Send, Mail, Linkedin, Github, Twitter, Instagram, Youtube } from "lucide-react"
+import { Send, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "#", username: "@yourname" },
-  { icon: Instagram, label: "Instagram", href: "#", username: "@yourname" },
-  { icon: Twitter, label: "X (Twitter)", href: "#", username: "@yourname" },
-  { icon: Youtube, label: "YouTube", href: "#", username: "@yourname" },
-  { icon: Github, label: "GitHub", href: "#", username: "@yourname" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/bartosz-kaszuba", username: "Bartosz Kaszuba" },
+  { icon: Github, label: "GitHub", href: "https://github.com/bartosz-kaszuba", username: "Bartosz Kaszuba" },
 ]
 
 export function Contact() {
@@ -25,7 +22,7 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
-    console.log("[v0] Form submitted:", formData)
+    console.log("Form submitted:", formData)
   }
 
   return (
@@ -38,7 +35,7 @@ export function Contact() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            Open to Opportunities
+            Available for Internship
           </div>
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance"
@@ -49,7 +46,7 @@ export function Contact() {
             <span className="text-primary">great together.</span>
           </h2>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
-            {["Developer Advocate", "Brand Partnerships", "Developer Relations", "Technical Evangelist", "Content Collaborations"].map((tag, index) => (
+            {["Full Stack Development", "React/TypeScript", "Laravel/PHP", "UX Research", "Agile Teams"].map((tag, index) => (
               <span
                 key={index}
                 className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium border border-border"
@@ -72,7 +69,7 @@ export function Contact() {
             Contact
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Have a role, partnership, or collaboration in mind? I&apos;d love to hear from you.
+            Interested in working together? I&apos;d love to hear from you about internship opportunities.
           </p>
         </div>
 
@@ -88,19 +85,43 @@ export function Contact() {
               <span className="text-primary">something awesome.</span>
             </h3>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              {"Whether you're a brand looking for a developer advocate, a company in need of DevRel expertise, or just want to chat about tech, I'd love to hear from you."}
+              {"I'm looking for an internship opportunity from August 2026 to January 2027 in North Brabant, Netherlands. If you have a position or project that could use a motivated full-stack developer, let's talk!"}
             </p>
 
-            {/* Email */}
-            <div className="flex items-center gap-4 mb-8 p-4 bg-card border border-border rounded-xl">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Mail className="w-5 h-5 text-primary" />
+            {/* Contact Details */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Email</p>
+                  <a href="mailto:bartoszkasz2005@gmail.com" className="text-foreground font-medium hover:text-primary transition-colors">
+                    bartoszkasz2005@gmail.com
+                  </a>
+                </div>
               </div>
-              <div>
-                <p className="text-muted-foreground text-sm">Email</p>
-                <a href="mailto:yourname@email.com" className="text-foreground font-medium hover:text-primary transition-colors">
-                  yourname@email.com
-                </a>
+
+              <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Phone</p>
+                  <a href="tel:+31640499612" className="text-foreground font-medium hover:text-primary transition-colors">
+                    +31 6 404 99 612
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-muted-foreground text-sm">Location</p>
+                  <p className="text-foreground font-medium">North Brabant, Netherlands</p>
+                </div>
               </div>
             </div>
 
@@ -110,6 +131,8 @@ export function Contact() {
                 <Link
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-secondary transition-colors group"
                 >
                   <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />

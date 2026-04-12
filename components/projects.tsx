@@ -5,32 +5,44 @@ import Link from "next/link"
 
 const projects = [
   {
-    title: "Project One",
-    description: "A successful Open-Source portfolio template featured on major tech sites and used by thousands of developers globally.",
-    tags: ["HTML", "CSS", "JavaScript", "Open Source"],
+    number: "01",
+    title: "SimplePark",
+    subtitle: "Parking App Start-up · 2025",
+    description: "Backend development & UX for a real parking management start-up product, delivered using agile methodology.",
+    impact: "Delivered business functionality tailored towards SMEs, enabling real-world deployment for the client.",
+    tags: ["Laravel", "UX", "Agile"],
     link: "#",
     github: "#",
   },
   {
-    title: "Project Two",
-    description: "A multiservice company website built from scratch using modern frontend technologies.",
-    tags: ["HTML", "CSS", "JavaScript", "Client Work"],
+    number: "02",
+    title: "GLOW – Echoes of Tomorrow",
+    subtitle: "Light Festival Installation · 2025",
+    description: "Designed power boxes for the LED arms of the installation. Built hardware architecture using ESP microcontrollers for light control.",
+    tags: ["ESP", "Hardware Architecture", "UX"],
     link: "#",
     github: "#",
   },
   {
-    title: "Project Three",
-    description: "A frontend recreation of a beautiful web app, built as a learning project inspired by modern UI design.",
-    tags: ["HTML", "CSS", "React", "Responsive Design"],
+    number: "03",
+    title: "Long Covid Buddy",
+    subtitle: "Health Companion App · Ongoing",
+    description: "Web app helping long Covid patients track and manage their energy levels.",
+    impact: "Beta tested with 15 users using integrated user behaviour analytics tools.",
+    tags: ["Live", "React", "TypeScript", "JS", "Beta Testing"],
     link: "#",
     github: "#",
+    isLive: true,
   },
   {
-    title: "Project Four",
-    description: "A web template targeting a specific industry, designed so anyone can present their business online.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    number: "04",
+    title: "Portflow",
+    subtitle: "DRIEAM LMS Platform · Ongoing",
+    description: "Adding annotation functionality to an existing LMS platform. Conducted UX research on implementation approach and built the feature end-to-end.",
+    tags: ["Live", "React", "TypeScript", "UX Research"],
     link: "#",
     github: "#",
+    isLive: true,
   },
 ]
 
@@ -41,7 +53,7 @@ export function Projects() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
-            Hand-Coded Work
+            IT Projects
           </p>
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6"
@@ -50,7 +62,7 @@ export function Projects() {
             Projects
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Real projects I built from scratch, line by line. Just HTML, CSS, JavaScript, and React.
+            Real projects built for start-ups, clients, and open source — from web apps to hardware installations.
           </p>
         </div>
 
@@ -59,52 +71,72 @@ export function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group p-6 lg:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
+              className="group relative p-6 lg:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 
-                  className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors"
-                  style={{ fontFamily: 'var(--font-heading)' }}
-                >
-                  {project.title}
-                </h3>
-                <div className="flex items-center gap-2">
-                  <Link
-                    href={project.github}
-                    className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label={`View ${project.title} on GitHub`}
+              {/* Project Number */}
+              <span 
+                className="absolute top-6 right-6 text-4xl font-bold text-muted/30"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                {project.number}
+              </span>
+
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <h3 
+                    className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors"
+                    style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    <Github className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    href={project.link}
-                    className="p-2 text-muted-foreground hover:text-primary transition-colors"
-                    aria-label={`View ${project.title} project`}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </Link>
+                    {project.title}
+                  </h3>
+                  <p className="text-primary text-sm italic">{project.subtitle}</p>
                 </div>
               </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+
+              <p className="text-muted-foreground mb-4 leading-relaxed">
                 {project.description}
               </p>
+
+              {project.impact && (
+                <div className="mb-4 p-3 bg-secondary border-l-2 border-primary rounded-r-lg">
+                  <p className="text-sm text-foreground">{project.impact}</p>
+                </div>
+              )}
+
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium"
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      tag === "Live" 
+                        ? "bg-green-500/10 text-green-700 border border-green-500/20" 
+                        : "bg-secondary text-secondary-foreground"
+                    }`}
                   >
+                    {tag === "Live" && (
+                      <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5 animate-pulse" />
+                    )}
                     {tag}
                   </span>
                 ))}
               </div>
-              <Link
-                href={project.link}
-                className="inline-flex items-center text-primary font-medium text-sm hover:underline"
-              >
-                View Project
-                <ArrowUpRight className="ml-1 w-4 h-4" />
-              </Link>
+
+              <div className="flex items-center gap-4">
+                <Link
+                  href={project.link}
+                  className="inline-flex items-center text-primary font-medium text-sm hover:underline"
+                >
+                  View Project
+                  <ArrowUpRight className="ml-1 w-4 h-4" />
+                </Link>
+                <Link
+                  href={project.github}
+                  className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={`View ${project.title} on GitHub`}
+                >
+                  <Github className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>

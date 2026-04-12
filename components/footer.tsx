@@ -1,26 +1,32 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Instagram, Youtube, ArrowUp } from "lucide-react"
+import { Github, Linkedin, ArrowUp } from "lucide-react"
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/bartosz-kaszuba", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/bartosz-kaszuba", label: "GitHub" },
 ]
 
 const footerLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "about" },
+  { label: "Projects", href: "projects" },
+  { label: "Experience", href: "experience" },
+  { label: "Education", href: "education" },
+  { label: "Contact", href: "contact" },
 ]
 
 export function Footer() {
+  const { scrollToSection } = useSmoothScroll()
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    scrollToSection(href)
   }
 
   return (
@@ -34,7 +40,7 @@ export function Footer() {
               className="text-xl font-bold text-foreground hover:text-primary transition-colors"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              YourName
+              Bartosz Kaszuba
             </Link>
             <p className="text-muted-foreground text-sm mt-2">
               © {new Date().getFullYear()} All rights reserved.
@@ -44,13 +50,14 @@ export function Footer() {
           {/* Footer Links */}
           <nav className="flex items-center gap-6">
             {footerLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                href={`#${link.href}`}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -60,6 +67,8 @@ export function Footer() {
               <Link
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-primary transition-colors"
                 aria-label={social.label}
               >
