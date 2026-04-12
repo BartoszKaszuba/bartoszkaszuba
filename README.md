@@ -1,35 +1,55 @@
-# bartoszkaszuba-0c
+# Hi there, I'm Bartosz Kaszuba 👋
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bartosz-kaszuba/)
+[![Portfolio Website](https://img.shields.io/badge/Portfolio-%23CD853F.svg?logo=PortfolioWebsite&logoColor=white)](https://bartoszkaszuba.vercel.app/)
 
-## Built with v0
+### 🚀 What I'm Doing
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+- **Building Real Projects:** Developing software for start-ups and clients.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_t0hjGQUOCJGMqJr8L869MGPi1RmK)
+- **Full Stack Development:** Creating impactful solutions starting with UX research ending at deployed code using modern tech stacks.
 
-## Getting Started
+- **Studying:** Pursuing a Bachelor's degree in ICT at Fontys University of Applied Sciences (Eindhoven, Netherlands).
 
-First, run the development server:
+### 🛠️ Skills & Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+**Core Competencies**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Full Stack Development](https://img.shields.io/badge/Full_Stack_Development-0052CC?style=for-the-badge&logo=git&logoColor=white)
 
-## Learn More
+![Hardware & IoT](https://img.shields.io/badge/Hardware_&_IoT-10B981?style=for-the-badge&logo=linux&logoColor=white)
 
-To learn more, take a look at the following resources:
+![UX Research](https://img.shields.io/badge/UX_Research-FF6B6B?style=for-the-badge&logo=figma&logoColor=white)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+![Agile Delivery](https://img.shields.io/badge/Agile_Delivery-FFB800?style=for-the-badge&logo=rocket&logoColor=white)
 
-<a href="https://v0.app/chat/api/kiro/clone/BartoszKaszuba/bartoszkaszuba-0c" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+**Tech Stack**
+
+<br>
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
+
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+
+![HTML/CSS](https://img.shields.io/badge/HTML%2FCSS-E34C26?style=for-the-badge&logo=html5&logoColor=white)
+
+![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
+
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+
+### 📈 Featured Projects
+
+- **SimplePark** – Parking management SaaS application (Laravel backend, UX-focused)
+- **GLOW – Echoes of Tomorrow** – Light festival installation with ESP32 hardware architecture
+- **Long Covid Buddy** – Health companion web app with user behaviour analytics
+- **Portflow** – LMS platform with annotation features and UX research integration
