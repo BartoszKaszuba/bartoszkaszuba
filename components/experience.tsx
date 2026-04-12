@@ -2,6 +2,13 @@
 
 const workExperience = [
   {
+    date: "2024–2026",
+    title: "Freelance",
+    company: "Hospitality",
+    description: "Bar and kitchen support across various venues. Developed adaptability and customer service skills in fast-paced environments.",
+    tags: ["Customer Service", "Adaptability", "Teamwork"],
+  },
+  {
     date: "2024",
     title: "Logistics Intern",
     company: "Cornelissen",
@@ -15,27 +22,20 @@ const workExperience = [
     description: "Developed a process-oriented work ethic through warehouse operations and transport coordination. Gained hands-on experience in client communication and operational reliability.",
     tags: ["Warehouse Operations", "Transport", "Reliability"],
   },
-  {
-    date: "2024–2026",
-    title: "Freelance",
-    company: "Hospitality",
-    description: "Bar and kitchen support across various venues. Developed adaptability and customer service skills in fast-paced environments.",
-    tags: ["Customer Service", "Adaptability", "Teamwork"],
-  },
 ]
 
 const honorableMentions = [
   {
-    date: "Ongoing",
-    title: "Team Collaboration",
-    description: "Active participation in team projects at Fontys, developing leadership and interpersonal skills through agile workflows.",
-    tags: ["Leadership", "Teamwork", "Communication"],
+    date: "2025–Present",
+    title: "Vice-Chair - Institute Participation Council",
+    description: "Vice-Chair of an ICT participation council at Fontys. Developed an understanding of enterprise strategy and professional advisory skills.",
+    tags: ["Leadership", "Strategy", "Advisory"],
   },
   {
     date: "2024–Present",
-    title: "Multilingual Communication",
-    description: "Fluent in English, Polish, and Dutch — enabling effective collaboration in international and multicultural environments.",
-    tags: ["Languages", "Cross-cultural", "Professional"],
+    title: "Activity Committee Member",
+    description: "Member of activity committee of study association IERA, developed strong organizational skills.",
+    tags: ["Organization", "Teamwork", "Events"],
   },
 ]
 

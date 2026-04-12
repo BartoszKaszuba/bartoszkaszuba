@@ -9,7 +9,7 @@ const projects = [
     title: "SimplePark",
     subtitle: "Parking App Start-up · 2025",
     description: "Backend development & UX for a real parking management start-up product, delivered using agile methodology.",
-    impact: "Delivered business functionality tailored towards SMEs, enabling real-world deployment for the client.",
+    impact: "Delivered business functionality tailored towards SMEs, laying the ground work for accomodating B2B clients.",
     tags: ["Laravel", "UX", "Agile"],
     link: "#",
     github: "#",

@@ -5,8 +5,8 @@ import { Github, Linkedin, ArrowUp } from "lucide-react"
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com/in/bartosz-kaszuba", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com/bartosz-kaszuba", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/bartosz-kaszuba-746893267/", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/BartoszKaszuba", label: "GitHub" },
 ]
 
 const footerLinks = [

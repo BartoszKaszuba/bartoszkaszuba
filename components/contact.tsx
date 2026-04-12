@@ -7,8 +7,8 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/bartosz-kaszuba", username: "Bartosz Kaszuba" },
-  { icon: Github, label: "GitHub", href: "https://github.com/bartosz-kaszuba", username: "Bartosz Kaszuba" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/bartosz-kaszuba-746893267/", username: "Bartosz Kaszuba" },
+  { icon: Github, label: "GitHub", href: "https://github.com/BartoszKaszuba", username: "Bartosz Kaszuba" },
 ]
 
 export function Contact() {
