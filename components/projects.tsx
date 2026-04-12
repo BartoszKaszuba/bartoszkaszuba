@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react"
+import { ArrowUpRight, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 const projects = [
@@ -11,8 +11,8 @@ const projects = [
     description: "Backend development & UX for a real parking management start-up product, delivered using agile methodology.",
     impact: "Delivered business functionality tailored towards SMEs, laying the ground work for accomodating B2B clients.",
     tags: ["Laravel", "UX", "Agile"],
-    link: "#",
-    github: "#",
+    link: "https://deltafontysict.nl/projects/simplepark/",
+    backgroundImage:"/images/simplepark.jpg", 
   },
   {
     number: "02",
@@ -21,7 +21,7 @@ const projects = [
     description: "Designed power boxes for the LED arms of the installation. Built hardware architecture using ESP microcontrollers for light control.",
     tags: ["ESP", "Hardware Architecture", "UX"],
     link: "#",
-    github: "#",
+    backgroundImage: "/images/glow.jpg",
   },
   {
     number: "03",
@@ -30,9 +30,9 @@ const projects = [
     description: "Web app helping long Covid patients track and manage their energy levels.",
     impact: "Beta tested with 15 users using integrated user behaviour analytics tools.",
     tags: ["Live", "React", "TypeScript", "JS", "Beta Testing"],
-    link: "#",
-    github: "#",
+    link: "https://deltafontysict.nl/projects/long-covid-buddy/",
     isLive: true,
+    backgroundImage: "/images/longcovid.png",
   },
   {
     number: "04",
@@ -40,9 +40,9 @@ const projects = [
     subtitle: "DRIEAM LMS Platform · Ongoing",
     description: "Adding annotation functionality to an existing LMS platform. Conducted UX research on implementation approach and built the feature end-to-end.",
     tags: ["Live", "React", "TypeScript", "UX Research"],
-    link: "#",
-    github: "#",
+    link: "https://drieam.com/en/solutions/portflow/",
     isLive: true,
+    backgroundImage: "/images/portflowdrieam.png", 
   },
 ]
 
@@ -71,11 +71,29 @@ export function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative p-6 lg:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
+              className="group relative p-6 lg:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 overflow-hidden"
+              style={
+                project.backgroundImage
+                  ? {
+                      backgroundImage: `url(${project.backgroundImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }
+                  : {}
+              }
             >
+              {/* Background Overlay */}
+              {project.backgroundImage && (
+                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/80 via-orange-900/70 to-orange-800/60 rounded-xl" />
+              )}
+              
+              {/* Content Wrapper */}
+              <div className="relative z-10">
               {/* Project Number */}
               <span 
-                className="absolute top-6 right-6 text-4xl font-bold text-muted/30"
+                className={`absolute top-6 right-6 text-4xl font-bold ${
+                  project.backgroundImage ? 'text-orange-100/40' : 'text-muted/30'
+                }`}
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {project.number}
@@ -84,22 +102,34 @@ export function Projects() {
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <h3 
-                    className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors"
+                    className={`text-xl font-semibold ${
+                      project.backgroundImage ? 'text-white group-hover:text-orange-100' : 'text-foreground group-hover:text-primary'
+                    } transition-colors`}
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {project.title}
                   </h3>
-                  <p className="text-primary text-sm italic">{project.subtitle}</p>
+                  <p className={`text-sm italic ${
+                    project.backgroundImage ? 'text-orange-100' : 'text-primary'
+                  }`}>{project.subtitle}</p>
                 </div>
               </div>
 
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className={`mb-4 leading-relaxed ${
+                project.backgroundImage ? 'text-orange-50' : 'text-muted-foreground'
+              }`}>
                 {project.description}
               </p>
 
               {project.impact && (
-                <div className="mb-4 p-3 bg-secondary border-l-2 border-primary rounded-r-lg">
-                  <p className="text-sm text-foreground">{project.impact}</p>
+                <div className={`mb-4 p-3 border-l-2 rounded-r-lg ${
+                  project.backgroundImage 
+                    ? 'bg-orange-900/40 border-orange-100' 
+                    : 'bg-secondary border-primary'
+                }`}>
+                  <p className={`text-sm ${
+                    project.backgroundImage ? 'text-orange-50' : 'text-foreground'
+                  }`}>{project.impact}</p>
                 </div>
               )}
 
@@ -109,7 +139,9 @@ export function Projects() {
                     key={tagIndex}
                     className={`px-3 py-1 rounded-full text-xs font-medium ${
                       tag === "Live" 
-                        ? "bg-green-500/10 text-green-700 border border-green-500/20" 
+                        ? "bg-green-500/40 text-green-200 border border-green-400/50" 
+                        : project.backgroundImage
+                        ? "bg-orange-700/50 text-orange-50 border border-orange-400/30"
                         : "bg-secondary text-secondary-foreground"
                     }`}
                   >
@@ -124,18 +156,17 @@ export function Projects() {
               <div className="flex items-center gap-4">
                 <Link
                   href={project.link}
-                  className="inline-flex items-center text-primary font-medium text-sm hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center font-medium text-sm hover:underline ${
+                    project.backgroundImage ? 'text-orange-100' : 'text-primary'
+                  }`}
                 >
                   View Project
                   <ArrowUpRight className="ml-1 w-4 h-4" />
                 </Link>
-                <Link
-                  href={project.github}
-                  className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={`View ${project.title} on GitHub`}
-                >
-                  <Github className="w-5 h-5" />
-                </Link>
+                
+              </div>
               </div>
             </div>
           ))}

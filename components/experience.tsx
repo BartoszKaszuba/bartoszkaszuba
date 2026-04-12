@@ -73,12 +73,12 @@ export function Experience() {
               {workExperience.map((exp, index) => (
                 <div
                   key={index}
-                  className="p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
+                  className="group p-6 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                     <div>
                       <h4 
-                        className="text-foreground font-semibold"
+                        className="text-foreground font-semibold group-hover:text-primary transition-colors"
                         style={{ fontFamily: 'var(--font-heading)' }}
                       >
                         {exp.title}
@@ -121,11 +121,11 @@ export function Experience() {
               {honorableMentions.map((mention, index) => (
                 <div
                   key={index}
-                  className="p-6 bg-card border border-border rounded-xl hover:border-accent/50 transition-all duration-300"
+                  className="group p-6 bg-card border border-border rounded-xl hover:border-accent/50 transition-all duration-300"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                     <h4 
-                      className="text-foreground font-semibold"
+                      className="text-foreground font-semibold group-hover:text-accent transition-colors"
                       style={{ fontFamily: 'var(--font-heading)' }}
                     >
                       {mention.title}
