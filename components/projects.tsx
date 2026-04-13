@@ -20,7 +20,7 @@ const projects = [
     subtitle: "Light Festival Installation · 2025",
     description: "Designed power boxes for the LED arms of the installation. Built hardware architecture using ESP microcontrollers for light control.",
     tags: ["ESP", "Hardware Architecture", "UX"],
-    link: "#",
+    link: "https://deltafontysict.nl/projects/echoes-of-tomorrow/",
     backgroundImage: "/images/glow.jpg",
   },
   {
