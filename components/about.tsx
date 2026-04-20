@@ -62,7 +62,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
           <div className="space-y-6">
             <p className="text-foreground text-lg leading-relaxed">
-              {"I'm a Full Stack Developer and ICT student at Fontys University of Applied Sciences in Eindhoven. I build applications that solve real user problems — from parking management systems to health companion apps."}
+              {"I'm a ICT student at Fontys University of Applied Sciences in Eindhoven. I build applications that solve real user problems — from parking management systems to health companion apps."}
             </p>
             <p className="text-muted-foreground leading-relaxed">
               {"My experience spans from working on start-up products to creating hardware installations for light festivals. I'm passionate, curious, and ready to contribute from day one."}
