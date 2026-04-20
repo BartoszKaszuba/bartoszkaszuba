@@ -54,7 +54,7 @@ export function About() {
             About Me
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            ICT student at Fontys University with hands-on project experience, building applications that solve real problems.
+            Developer and ICT student at Fontys University with hands-on project experience, building applications that solve real problems.
           </p>
         </div>
 
