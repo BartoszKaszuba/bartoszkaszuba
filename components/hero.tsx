@@ -39,7 +39,7 @@ export function Hero() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed text-pretty">
-              Full Stack Developer & ICT student at Fontys University with real project experience — from parking start-ups to light festival installations.
+              ICT student at Fontys University with real project experience — from parking start-ups to light festival installations.
             </p>
 
             {/* Internship Badge */}
