@@ -14,7 +14,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: 'Bartosz Kaszuba | Full Stack Developer',
-  description: 'Full Stack Developer & ICT student at Fontys University. Building web applications with React, TypeScript, Laravel, and modern technologies.',
+  description: 'ICT student at Fontys University. Building web applications with React, TypeScript, Laravel, and modern technologies.',
   icons: {
     icon: '/images/nextjs-icon-md.png',
   },
